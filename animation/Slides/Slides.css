@@ -1,0 +1,161 @@
+.slide_container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+.image_container{
+    width: 15vw;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    transition: all 1s  ;
+}
+.background_image_ic{
+    position: relative;
+    height: inherit;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    animation: scale_down  ;
+    
+}
+.image_container::before{
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background-color: black;
+    z-index: 2;
+    animation: load_up 3s;
+}
+
+@keyframes load_up {
+    0%{
+        top:0;
+        scale: 2;
+    }
+    100%{
+        top: -100%;
+        scale: 1;
+    }
+}
+@keyframes scale_down {
+    0%{
+        scale: 3;
+    }
+    100%{
+        scale: 1;
+    }
+}
+.card{
+    position: relative;
+    overflow: visible;
+    width: max-content;
+    transition: all 1s;
+}
+.card:nth-child(1) .image_container .background_image_ic{
+    animation-duration: 0.8s;
+}
+.card:nth-child(2) .image_container .background_image_ic{
+    animation-duration: 1.2s;    
+}
+.card:nth-child(3) .image_container .background_image_ic{
+    animation-duration: 1.6s;    
+}
+.card:nth-child(4) .image_container .background_image_ic{
+    animation-duration: 2.0s;    
+}
+.card:nth-child(5) .image_container .background_image_ic{
+    animation-duration: 2.4s;    
+}
+
+.card:nth-child(1) .image_container::before{
+    animation-duration: 0.8s;
+}
+.card:nth-child(2) .image_container::before{
+    animation-duration: 1.2s;    
+}
+.card:nth-child(3) .image_container::before{
+    animation-duration: 1.6s;    
+}
+.card:nth-child(4) .image_container::before{
+    animation-duration: 2.0s;    
+}
+.card:nth-child(5) .image_container::before{
+    animation-duration: 2.4s;    
+}
+
+.card > span {
+    font-size: 12vw;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 10;
+    opacity: 0;
+    user-select: none;
+}
+
+.load_up_text_animation{
+    animation: load_up_text 0.5s ease;
+}
+@keyframes load_up_text  {
+    0%{
+        bottom: -50%;
+        opacity: 0;
+    }
+    100%{
+        bottom: -10%;
+        opacity: 1;
+    };
+}
+.cursor_circle{
+    position: fixed;
+    z-index: 1000000;
+    transform: translate(-50%,-50%);
+    width: min(40vw,300px);
+    aspect-ratio: 1/1;
+    border:min(10vw, 75px ) solid rgba(255, 255, 255, 0.439);
+    border-radius: 50%;
+    opacity: 0;
+    animation: scale_circle 0.5s;
+    transform-origin: center;
+    user-select: none;
+}
+@keyframes scale_circle {
+    0%{
+        width: 10px;
+        opacity: 1;
+        border: 1px solid rgba(255, 255, 255, 0.439);
+    }
+    50%{
+        border:min(10vw, 75px ) solid rgba(255, 255, 255, 0.439);
+    }
+    100%{
+        width: min(40vw,300px);
+        opacity: 1;
+        
+    }
+}
+.close{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    font-size: 2vw;
+    z-index: 1000000;
+    font-weight: bolder;
+    font-family:  sans-serif;
+    user-select: none;
+    padding: 10px;
+}
