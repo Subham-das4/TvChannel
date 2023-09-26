@@ -1,0 +1,131 @@
+:root{
+    --primary-color:#994ECC;
+    --secondary-color:#3E187A;
+    --primary-font:  'PT Serif', serif;
+    --secondary-font: 'Mooli', sans-serif;
+}
+.login_container{
+    display: grid;
+    grid-template-columns: 60vw 40vw;
+    width: 100vw;
+    overflow: hidden;
+    min-height: 100vh;
+}
+.login_section{
+    width: 60vw;
+    gap: 2vh;
+}
+.login_section > h3{
+    margin-top: auto;
+    padding: 10px;
+}
+.text_section{
+    width: 40vw;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color:rgba(255, 255, 255, 0.751);
+    padding-bottom: 40px;
+    
+}
+.login_container > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text_section > p{
+    max-width: 400px;
+    text-align: justify;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative;
+}
+.text_section > h2{
+    font-family: var(--secondary-font);
+}
+.rights_span{
+    margin-top: auto;
+    padding: 25px;
+}
+.login_section > form > section{
+    height: min(50px , 10vh);
+    border-radius: min(25px , 5vh);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    min-width: min(400px , 90vw);
+    transition: all 0.75s;
+}
+.login_section > form > .box-shadow{
+        box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.544);
+}
+.login_section > form > .error-shadow{
+    box-shadow: -2px 4px 25px rgba(228, 10, 10, 0.833);
+}
+.login_section > form{
+    margin-bottom: auto;
+}
+.login_section > form input{
+    outline: none;
+    border: none;
+    height: 100%;
+    padding: 10px;
+}
+.login_section > form > section > span{
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+.login_section > form > section > .eye{
+    margin-left: auto;
+    cursor: pointer;
+}
+.login_section > form > section > button{
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    border-radius: min(25px , 5vh);
+    outline: none;
+    border: none;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+.family_signature{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+}
+.login_container ::selection{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .login_container{
+        display: flex;
+        overflow: hidden;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .login_section{
+        width: 100vw;
+        gap: 2vh;
+        order: 2;
+    }
+    .text_section{
+        width: 100vw;
+        order: 1;
+        margin-bottom: auto;
+        min-height: 40vh;
+    }
+}
