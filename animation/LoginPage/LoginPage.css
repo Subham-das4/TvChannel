@@ -98,9 +98,8 @@
     user-select: none;
 }
 .family_signature{
-    position: absolute;
-    top: 100%;
-    right: 10%;
+    width: 300px;
+    text-align: end;
 }
 .login_container ::selection{
     background-color: var(--primary-color);
